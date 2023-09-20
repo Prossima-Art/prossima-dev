@@ -1,13 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Libre+Baskerville:wght@700&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+:root {
+  --green-color: #6cbf84;
+  --green-color-light: rgba(108, 191, 132, 0.15);
+
+  --error-color: #f25685;
+  --error-color-light: rgba(242, 86, 133, 0.15);
+  --warnning-color: #eb8155;
+  --warnning-color-light: rgba(235, 129, 85, 0.15);
+  --info-color: #5682f2;
+  --info-color-light: rgba(86, 130, 242, 0.15);
+
+  --text-color: #110e3d;
+  --text-color-light: #343434;
+  --text-decoration-color:#0068ff;
+
+  --purple-color: #9e5aff;
+
+  --text-font: "Inter", sans-serif;
+  --font-H1: 2.5rem;
+  --font-H2: 2rem;
+  --font-H3: 1.5rem;
+  --font-H4: 1.25rem;
+  --font-H5: 1rem;
+
+  --font-normal: 400;
+  --font-light: 300;
+  --font-medium: 500;
+  --font-bold: 700;
+}
+
+.greentag {
+  color: var(--green-color);
+  background: var(--green-color-light);
+  padding: 0.2rem 1rem;
+  border-radius: 6.1875rem;
+  text-transform: uppercase;
+}
+
+.redtag {
+  color: var(--error-color);
+  background: var(--error-color-light);
+  padding: 0.2rem 1rem;
+  border-radius: 6.1875rem;
+  text-transform: uppercase;
+}
+
+.orangetag {
+  color: var(--warnning-color);
+  background: var(--warnning-color-light);
+  padding: 0.2rem 1rem;
+  border-radius: 6.1875rem;
+  text-transform: uppercase;
+}
+
+.bluetag {
+  color: var(--info-color);
+  background: var(--info-color-light);
+  padding: 0.2rem 1rem;
+  border-radius: 6.1875rem;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: var(--text-color);
+  font-size: var(--font-H2);
+  font-style: var(--font-normal);
+  font-weight: 400;
+}
+
+.paragraph {
+  color: var(--text-color-light);
+  text-align: center;
+  font-size: var(--font-H5);
+  font-style: var(--font-normal);
+  font-weight: 400;
+}
+
+.textH4 {
+  color: var(--text-color-light);
+  text-align: center;
+  font-size: var(--font-H4);
+  font-style: var(--font-normal);
+  font-weight: 400;
+}
+
+.text-decoration {
+  color: var(  --text-decoration-color);
+  font-family: Inter;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3.7375rem;
+  letter-spacing: -0.08125rem;
+}
+
+h1 {
+  color: var(--text-color);
+  text-align: center;
+  font-family: Inter;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 3.7375rem;
+  letter-spacing: -0.08125rem;
+}
+
+
+.justify {
+  display: flex !important;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }

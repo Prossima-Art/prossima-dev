@@ -1,0 +1,19 @@
+.arrowCurve svg {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 14rem;
+    height: 15.41175rem;
+    padding: 0rem 0.016rem 0rem 0rem;
+    top: 60%;
+    
+  }
+
+  .stepComp{
+    padding-top: 4rem;
+  }
+
+.img-fluid img{
+    max-width: 32rem;
+}

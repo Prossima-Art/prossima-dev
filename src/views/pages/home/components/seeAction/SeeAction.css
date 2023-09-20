@@ -1,0 +1,32 @@
+
+.seeActionComp {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  border-radius: 62.4375rem;
+  background: #F2F8FF;
+  width: 60%;
+}
+
+/* Button style */
+
+.button {
+  display: flex;
+  max-width: 21.115rem;
+  padding: 0.97rem 1.5rem 0.97rem 1.5rem;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.5rem;
+  border-radius: 6.1875rem;
+  background: rgba(17, 14, 61, 0.06);
+  border-color: transparent;
+
+  color: #4e5079;
+  text-align: center;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.63125rem;
+}
