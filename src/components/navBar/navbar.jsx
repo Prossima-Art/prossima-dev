@@ -1,9 +1,10 @@
-import { Navbar, Nav, Button } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 
 
 
 import React from "react";
 import { Logo } from "../utils/logo";
+import { ModalContato } from "../offcanvas/Offcanvas";
 
 const NavbarComp = () => {
   return (
@@ -24,7 +25,7 @@ const NavbarComp = () => {
           <Nav.Link href="/HowWorksView" className="mx-4">How It Works</Nav.Link>
           
         </Nav>
-        <Button href="https://wa.link/2064ef" className="mx-4 position-relative rounded-5" size="lg" variant="primary">Join Waitlist</Button>
+        <ModalContato/>
       </Navbar.Collapse>
     </Navbar>
   );
