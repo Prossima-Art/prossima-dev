@@ -12,8 +12,8 @@ function FormComp() {
     console.log(inputEmail);
 
     //This will be sent to DB
-    // INSERT INTO contacts (Nome, Email)
-    // VALUES  (inputName, inputEmail);
+    let sql = 'INSERT INTO contacts (Nome, Email) VALUES ('+inputName+','+inputEmail+')';
+    console.log(sql);
 
   }
   
@@ -37,7 +37,7 @@ function FormComp() {
         >
           <Form.Label>Email address</Form.Label>
           <Form.Control
-            className="rounded-6"
+            className="rounded-5"
             type="email"
             placeholder="name@example.com"
             value={inputEmail}

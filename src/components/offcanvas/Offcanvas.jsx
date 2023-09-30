@@ -30,7 +30,7 @@ export function OffCanvasExample({ ...props }) {
   return (
     <>
       <Button variant="primary" className="mx-4 position-relative rounded-5" onClick={handleShow}>
-        Contanct Us
+        Contact Us
       </Button>
 
       <Offcanvas
