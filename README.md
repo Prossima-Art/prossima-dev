@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Prossima AI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repo is used to build and host the website of Prossima Dev, which belongs to the Prossima Suite.
 
-## Available Scripts
+Prossima Dev website is built using React Framework.
 
-In the project directory, you can run:
+## Installation
+Open a terminal and clone the repository:
+```shell
+git clone https://github.com/Prossima-Art/prossima-dev
+```
+Make sure you have installed the [Git](https://git-scm.com/downloads) tool.
 
-### `npm start`
+Then navigate to the new folder:
+```shell
+cd prossima-dev
+```
+and install all dependencies:
+```shell
+npm install
+```
+then run it:
+```shell
+npm start
+```
+Make sure that you have already installed the [node.js](https://nodejs.org/es/).
+Finally, open the browser at http://localhost:3000/ for visualizing the website. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Issues
+The package mysql2 is required to make CRUD operations and has to be installed:
+```shell
+npm install mysql2
+```
+and inserted in the code as:
+```js
+import mysql from 'mysql2/promise'
+```
+but it has a lot of issues. This is because versions of webpack>5 doesnt include polyfill by default. This guys [here](https://www.alchemy.com/blog/how-to-polyfill-node-core-modules-in-webpack-5) relate quite well the issue and manage to resolve it.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+However, we took an alternative way that consists in making the following steps:
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. In case it was not installed, install browserify and crypto-browserify. More info [here](https://stackoverflow.com/questions/68271637/module-not-found-error-cant-resolve-crypto-in)
+2. Modify the webpack.config.js inside node_modules/react-scripts/config/. More info [here](https://stackoverflow.com/questions/68271637/module-not-found-error-cant-resolve-crypto-in)
+3. Install the rest of modules (stream, timers, zlib, net, tls):
+```shell
+npm install stream timers zlib net tls
+```
+4. In case the errors persits, they might be related to the zlib packages. (Can't resolve './zlib_bindings'). In that case, remove zlib package, and
+5. Modify again webpack.config.js inside node_modules/react-scripts/config/
+```js
+resolve: {
+    fallback: {
+        zlib: require.resolve("browserify-zlib"),
+    }
+}
+```
