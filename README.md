@@ -39,8 +39,18 @@ but it has a lot of issues. This is because versions of webpack>5 doesnt include
 
 However, we took an alternative way that consists in making the following steps:
 
-1. In case it was not installed, install browserify and crypto-browserify. More info [here](https://stackoverflow.com/questions/68271637/module-not-found-error-cant-resolve-crypto-in)
+1. In case they did not come preinstalled, install browserify and crypto-browserify. More info [here](https://stackoverflow.com/questions/68271637/module-not-found-error-cant-resolve-crypto-in)
+```shell
+npm install browserify crypto-browserify
+```
 2. Modify the webpack.config.js inside node_modules/react-scripts/config/. More info [here](https://stackoverflow.com/questions/68271637/module-not-found-error-cant-resolve-crypto-in)
+```js
+resolve: {
+    fallback: {
+        crypto: require.resolve("crypto-browserify"),
+    }
+}
+```
 3. Install the rest of modules (stream, timers, zlib, net, tls):
 ```shell
 npm install stream timers zlib net tls
